@@ -1,0 +1,54 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+
+	function generateText(letters, length){
+		var text = "";
+		for(var i = 0; i < length; i++){
+			var n = getRandomNumber(letters.length - 1);
+			text = text + letters[n];
+		}
+		return text;
+	}
+
+	function compareText(userText, text){
+		if (userText == text){
+			alert ("Все верно!");
+			return 1;
+		} else {
+			alert ("Вы ошиблись, попробуйте еще раз")
+		}	
+	}
+
+	function train(letters, length){
+		var result = 0;
+		while (result != 1){
+		alert("Поставьте мизинец левой руки на букву Ф, безымянный палец — на Ы, средний — на В, указательный — на А.\n Мизинец правой руки на букву Ж, безымянный палец — на Д, средний — на Л, указательный — на О.\n Запомните расположение пальцев. Повторяйте за мной");
+
+		var text = generateText(letters, length);
+		var userText = prompt(text);
+		result = compareText(userText, text);
+	}
+	}
+
+
+	alert("Вас приветствует программа по обучению слепой печати");
+
+	//уровень 1
+	train(["ф", "а"], 10);
+	
+	//уровень 2
+	train(["ы", "в"], 10);
+
+	//уровень 2
+	train(["о", "ж"], 10);
+
+	alert("Поздравляем, Вы выполнили все упражнения");
+	
+
+
+
+</script>
